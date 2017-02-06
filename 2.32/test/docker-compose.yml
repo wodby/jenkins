@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  jenkins:
+    image: $IMAGE
+    environment:
+      JENKINS_PASSWORD: 12345678
+    ports:
+      - "8080:8080"
