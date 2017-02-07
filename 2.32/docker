@@ -6,4 +6,4 @@ if [[ -n "${DEBUG}" ]]; then
   set -x
 fi
 
-sudo /usr/bin/docker-original "$@"
+sudo docker-original "$@"
