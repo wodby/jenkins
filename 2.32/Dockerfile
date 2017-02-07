@@ -62,10 +62,6 @@ RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
     greenballs \
     ansicolor
 
-# We always should exec docker under root user, so replace it by sudo wrapper.
-RUN mv /usr/bin/docker /usr/bin/docker-original
-COPY docker /usr/local/bin/
-
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
