@@ -9,7 +9,8 @@ fi
 fixPermissions() {
     mkdir -p "${JENKINS_HOME}"
     chown jenkins:jenkins "${JENKINS_HOME}"
-    chown jenkins:jenkins /tmp
+    chown root:root /tmp
+    chmod 777 /tmp
 }
 
 generateDefaultUserPassword() {
