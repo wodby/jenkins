@@ -21,9 +21,10 @@ RUN apk add --no-cache \
         /usr/bin/docker-containerd \
         /usr/bin/docker-proxy \
         /etc/conf.d/docker \
-        /etc/init.d/docker
+        /etc/init.d/docker && \
 
-RUN pip install --no-cache-dir \
+    # Install python tools
+    pip install --no-cache-dir \
     docker-compose \
     awscli
 

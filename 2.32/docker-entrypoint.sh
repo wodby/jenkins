@@ -6,9 +6,10 @@ if [[ -n "${DEBUG}" ]]; then
   set -x
 fi
 
-fixHomePermissions() {
+fixPermissions() {
     mkdir -p "${JENKINS_HOME}"
     chown jenkins:jenkins "${JENKINS_HOME}"
+    chown jenkins:jenkins /tmp
 }
 
 generateDefaultUserPassword() {
@@ -52,7 +53,7 @@ printNotice() {
     echo ''
 }
 
-fixHomePermissions
+fixPermissions
 generateDefaultUserPassword
 generateSshKey
 
