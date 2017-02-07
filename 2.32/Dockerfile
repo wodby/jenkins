@@ -55,6 +55,8 @@ RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
     mask-passwords \
     global-build-stats \
     disk-usage \
+    log-parser \
+    timestamper \
     greenballs \
     ansicolor
 
