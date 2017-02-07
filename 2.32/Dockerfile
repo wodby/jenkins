@@ -49,8 +49,14 @@ RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
     multi-branch-project-plugin \
     rebuild \
     envinject \
-    ansicolor \
-    modernstatus
+    postbuild-task \
+    thinBackup \
+    audit-trail \
+    mask-passwords \
+    global-build-stats \
+    disk-usage \
+    greenballs \
+    ansicolor
 
 COPY docker-entrypoint.sh /
 
