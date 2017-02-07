@@ -46,6 +46,8 @@ RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
     workflow-aggregator \
     docker-workflow \
     credentials-binding \
+    multi-branch-project-plugin \
+    rebuild \
     envinject \
     ansicolor \
     modernstatus
