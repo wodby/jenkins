@@ -57,6 +57,7 @@ RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
         mask-passwords \
         global-build-stats \
         postbuildscript \
+        git-parameter \
         bitbucket \
         github \
         disk-usage \
