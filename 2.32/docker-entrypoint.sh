@@ -11,6 +11,10 @@ fixPermissions() {
     chown jenkins:jenkins "${JENKINS_HOME}"
     chown root:root /tmp
     chmod 777 /tmp
+
+    if [[ -d /mnt/backups ]]; then
+        chown jenkins:jenkins /mnt/backups
+    fi
 }
 
 generateDefaultUserPassword() {
