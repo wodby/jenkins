@@ -43,24 +43,27 @@ COPY default-settings.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 # Install default plugins set
 RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
-    git \
-    matrix-auth \
-    workflow-aggregator \
-    docker-workflow \
-    credentials-binding \
-    multi-branch-project-plugin \
-    rebuild \
-    envinject \
-    postbuild-task \
-    thinBackup \
-    audit-trail \
-    mask-passwords \
-    global-build-stats \
-    disk-usage \
-    log-parser \
-    timestamper \
-    greenballs \
-    ansicolor
+        git \
+        matrix-auth \
+        workflow-aggregator \
+        docker-workflow \
+        credentials-binding \
+        multi-branch-project-plugin \
+        rebuild \
+        envinject \
+        postbuild-task \
+        thinBackup \
+        audit-trail \
+        mask-passwords \
+        global-build-stats \
+        postbuildscript \
+        bitbucket \
+        github \
+        disk-usage \
+        log-parser \
+        timestamper \
+        greenballs \
+        ansicolor
 
 COPY docker-entrypoint.sh /
 
