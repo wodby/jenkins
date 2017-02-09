@@ -8,6 +8,7 @@ RUN apk add --no-cache \
         pwgen \
         py-pip \
         make \
+        rsync \
         docker && \
 
     # Allow jenkins use sudo
