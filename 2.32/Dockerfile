@@ -63,6 +63,7 @@ RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
         github \
         disk-usage \
         log-parser \
+        build-token-root \
         timestamper \
         greenballs \
         ansicolor
