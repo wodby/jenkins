@@ -65,6 +65,7 @@ RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
         log-parser \
         build-token-root \
         timestamper \
+        label-linked-jobs \
         greenballs \
         ansicolor
 
