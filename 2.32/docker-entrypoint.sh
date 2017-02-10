@@ -10,8 +10,9 @@ fixPermissions() {
     mkdir -p "${JENKINS_HOME}"
     chown jenkins:jenkins "${JENKINS_HOME}"
 
-    chown root:root /tmp
-    chmod 777 /tmp
+    if [[ -d /mnt/jobs ]]; then
+        chown jenkins:jenkins /mnt/jobs
+    fi
 
     if [[ -d /mnt/backups ]]; then
         chown jenkins:jenkins /mnt/backups
