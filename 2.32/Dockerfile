@@ -56,6 +56,7 @@ RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
         bitbucket \
         disk-usage \
         timestamper \
+        remote-terminal-access \
         greenballs
 
 COPY docker-entrypoint.sh /
