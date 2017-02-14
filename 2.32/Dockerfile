@@ -6,6 +6,8 @@ RUN apk add --no-cache \
         sudo \
         su-exec \
         pwgen \
+        curl \
+        tar \
         py-pip \
         make \
         rsync \
