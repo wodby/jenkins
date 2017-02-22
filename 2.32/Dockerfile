@@ -49,18 +49,26 @@ COPY default-settings.groovy /usr/share/jenkins/ref/init.groovy.d/
 RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
         git \
         matrix-auth \
+        workflow-aggregator \
         credentials-binding \
+        multi-branch-project-plugin \
         rebuild \
         envinject \
         thinBackup \
         postbuild-task \
+        thinBackup \
+        audit-trail \
         mask-passwords \
+        global-build-stats \
         postbuildscript \
+        git-parameter \
         bitbucket \
+        github \
         disk-usage \
+        build-token-root \
         timestamper \
-        remote-terminal-access \
-        greenballs
+        greenballs \
+        ansicolor
 
 COPY docker-entrypoint.sh /
 
