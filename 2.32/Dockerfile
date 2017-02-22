@@ -56,7 +56,6 @@ RUN su-exec jenkins /usr/local/bin/install-plugins.sh \
         envinject \
         thinBackup \
         postbuild-task \
-        thinBackup \
         audit-trail \
         mask-passwords \
         global-build-stats \
