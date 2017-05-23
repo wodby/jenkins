@@ -1,26 +1,27 @@
 language: python
 
+sudo: required
+
 services:
   - docker
 
 env:
   global:
-    - DOCKER_COMPOSE_VERSION=1.10.0
-    - LATEST_VERSION=2.32
+    - DOCKER_COMPOSE_VERSION=1.11.2
+    - LATEST_VERSION=2.46
   matrix:
+    - VERSION=2.46
     - VERSION=2.32
 
-before_install:
+install:
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-install:
+script:
   - cd ./$VERSION
-  - make
-
-script: make test
+  - make && make test
 
 after_success: |
   if [ "$TRAVIS_PULL_REQUEST" == "false" ] && ([ "$TRAVIS_BRANCH" == "master" ] || [ -n "$TRAVIS_TAG" ]); then
@@ -37,9 +38,4 @@ after_success: |
   fi
 
 after_failure:
-  - docker-compose -f test/docker-compose.yml
   - make logs
-
-notifications:
-  email:
-    on_success: never

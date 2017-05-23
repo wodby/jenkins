@@ -21,5 +21,5 @@ jenkins make check-ready wait_seconds=5 max_try=12 delay_seconds=5 host="jenkins
 echo "OK"
 
 echo -n "Checking Jenkins version... "
-jenkins curl -s "jenkins:8080" | grep -q "Jenkins ver. 2.32.2"
+jenkins curl -s "jenkins:8080" | grep -q "Jenkins ver. 2.46.2"
 echo "OK"

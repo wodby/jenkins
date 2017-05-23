@@ -1,9 +1,9 @@
 -include env_make
 
-VERSION ?= 2.32
+VERSION ?= 2.46
 
 REPO = wodby/jenkins
-NAME = jenkins-2.32
+NAME = jenkins-2.46
 
 .PHONY: build test push shell run start stop logs clean release
 
