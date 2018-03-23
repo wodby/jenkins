@@ -5,19 +5,29 @@
 [![Docker Stars](https://img.shields.io/docker/stars/wodby/jenkins.svg)](https://hub.docker.com/r/wodby/jenkins)
 [![Wodby Slack](http://slack.wodby.com/badge.svg)](http://slack.wodby.com)
 
-## Supported tags and respective `Dockerfile` links:
+## Docker Images
 
-- [`2.46`, `latest` (*2.46/Dockerfile*)](https://github.com/wodby/jenkins/tree/master/2.46/Dockerfile)
-- [`2.32`, (*2.32/Dockerfile*)](https://github.com/wodby/jenkins/tree/master/2.32/Dockerfile)
+!!! For better reliability we release images with stability tags (`wodby/jenkins:2-X.X.X`) which correspond to [git tags](https://github.com/wodby/jenkins/releases). We **STRONGLY RECOMMEND** using images only with stability tags. 
 
-## Environment variables available for customization
+Overview:
 
-| Environment Variable | Default Value | Description |
-| -------------------- | ------------- | ----------- |
-| JENKINS_USER      | admin |                                          |
-| JENKINS_PASSWORD  |       | If blank will be generated automatically |
-| JENKINS_EXECUTORS | 2     |                                          |
+* All images are based on Alpine Linux
+* Base image: [jenkins/jenkins](https://hub.docker.com/r/jenkins/jenkins)
+* [TravisCI builds](https://travis-ci.org/wodby/jenkins) 
+* [Docker Hub](https://hub.docker.com/r/wodby/jenkins)
+
+Supported tags and respective `Dockerfile` links:
+
+* `2`, `2.112`, `latest` [_(Dockerfile)_](https://github.com/wodby/jenkins/tree/master/Dockerfile)
+
+## Environment Variables
+
+| Variable            | Default Value | Description                              |
+| ------------------- | ------------- | ---------------------------------------- |
+| `JENKINS_USER`      | `admin`       |                                          |
+| `JENKINS_PASSWORD`  |               | If blank will be generated automatically |
+| `JENKINS_EXECUTORS` | `2`           |                                          |
 
 ## Using in production
 
-Deploy Jenkins to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://wodby.com).
+Deploy Jenkins to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://cloud.wodby.com/stackhub/8f8e26e8-7600-46f9-b476-477e43ed0c1c/overview).
