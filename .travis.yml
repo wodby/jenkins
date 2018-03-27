@@ -5,9 +5,9 @@ services:
 
 env:
   global:
-    - LATEST_TAG=2.112
+    - LATEST_TAG=2.113
   matrix:
-    - TAG=2.112 JENKINS_VER=2.112 EXTRA_TAG=2
+    - TAG=2.113 JENKINS_VER=2.113 EXTRA_TAG=2
 
 script:
   - make && make test

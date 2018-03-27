@@ -18,7 +18,7 @@ Overview:
 
 Supported tags and respective `Dockerfile` links:
 
-* `2`, `2.112`, `latest` [_(Dockerfile)_](https://github.com/wodby/jenkins/tree/master/Dockerfile)
+* `2`, `2.113`, `latest` [_(Dockerfile)_](https://github.com/wodby/jenkins/tree/master/Dockerfile)
 
 ## Environment Variables
 
