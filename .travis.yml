@@ -4,11 +4,13 @@ services:
   - docker
 
 env:
-  - LATEST_TAG=2.112
-  - TAG=2.112 JENKINS_VER=2.112 EXTRA_TAG=2
+  global:
+    - LATEST_TAG=2.112
+  matrix:
+    - TAG=2.112 JENKINS_VER=2.112 EXTRA_TAG=2
 
 script:
   - make && make test
 
 after_success:
-  - bash "${TRAVIS_BUILD_DIR}/travis_release"
+  - . "${TRAVIS_BUILD_DIR}/travis_release"
