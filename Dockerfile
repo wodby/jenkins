@@ -14,8 +14,9 @@ USER root
 
 RUN set -ex; \
     \
-    addgroup -g 999 -S docker; \
-    adduser jenkins docker; \
+    # Group ping has gid 999 that matches with docker gid on Linux.
+    # Add user to docker group to give write permissions to mounted /var/run/docker.sock
+    adduser jenkins ping; \
     \
     apk add --no-cache \
         curl \
