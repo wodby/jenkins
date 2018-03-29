@@ -14,7 +14,7 @@ USER root
 
 RUN set -ex; \
     \
-    addgroup -S docker; \
+    addgroup -g 999 -S docker; \
     adduser jenkins docker; \
     \
     apk add --no-cache \
