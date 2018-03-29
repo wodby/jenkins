@@ -28,6 +28,35 @@ Supported tags and respective `Dockerfile` links:
 | `JENKINS_PASSWORD`  |               | If blank will be generated automatically |
 | `JENKINS_EXECUTORS` | `2`           |                                          |
 
+## Pre-installed plugins
+
+```
+ansicolor
+audit-trail
+bitbucket
+blueocean
+build-token-root
+credentials-binding
+disk-usage
+docker
+envinject
+jdk-tool
+git
+git-parameter
+github
+global-build-stats
+greenballs
+mask-passwords
+matrix-auth
+postbuild-task
+postbuildscript
+rebuild
+thinBackup
+timestamper
+workflow-aggregator
+workflow-multibranch
+```
+
 ## Using in production
 
 Deploy Jenkins to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://cloud.wodby.com/stackhub/8f8e26e8-7600-46f9-b476-477e43ed0c1c/overview).
