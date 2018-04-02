@@ -1,4 +1,4 @@
-JENKINS_VER ?= 2.113
+JENKINS_VER ?= 2.114
 
 REPO = wodby/jenkins
 NAME = jenkins-$(JENKINS_VER)

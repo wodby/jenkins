@@ -38,4 +38,20 @@ jenkins.getInjector().getInstance(AdminWhitelistRule.class)
 //
 //////////////////////////////////////////
 
+// Disable JNLP protocols except JNLP4
+if(!jenkins.isQuietingDown()) {
+    Set<String> agentProtocolsList = ['JNLP4-connect', 'Ping']
+    if(!jenkins.getAgentProtocols().equals(agentProtocolsList)) {
+        jenkins.setAgentProtocols(agentProtocolsList)
+        println "Agent Protocols have changed.  Setting: ${agentProtocolsList}"
+        jenkins.save()
+    }
+    else {
+        println "Nothing changed.  Agent Protocols already configured: ${jenkins.getAgentProtocols()}"
+    }
+}
+else {
+    println 'Shutdown mode enabled.  Configure Agent Protocols SKIPPED.'
+}
+
 jenkins.save()
