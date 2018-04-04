@@ -62,7 +62,7 @@ RUN set -ex; \
 USER jenkins
 
 # Default settigs init script
-COPY init.groovy.d/default-settings.groovy /usr/share/jenkins/ref/init.groovy.d/
+COPY init.groovy.d /usr/share/jenkins/ref/init.groovy.d/
 
 COPY docker-entrypoint.sh /
 COPY actions /usr/local/bin/
