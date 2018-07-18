@@ -1,4 +1,11 @@
-.idea/
-.docker.env
-env_make
-jenkins_home
+# IDE
+/.idea
+!/.idea/codeStyles
+!/.idea/inspectionProfiles
+
+# Docker
+/.docker.env
+/.docker-runtime
+
+# Project
+/.env
