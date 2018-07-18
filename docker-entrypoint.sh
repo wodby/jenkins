@@ -7,7 +7,7 @@ if [[ -n "${DEBUG}" ]]; then
 fi
 
 generate_default_password() {
-    pass_file="${JENKINS_HOME}/.password"
+    pass_file="${JENKINS_HOME}/secrets/password.txt"
 
     if [[ -z "${JENKINS_PASSWORD}" ]]; then
         export JENKINS_PASSWORD=$(pwgen -s 32 1)
