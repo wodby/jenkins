@@ -17,9 +17,9 @@ generate_default_password() {
         print_notice "Generated default user password:" \
             "    login: ${JENKINS_USER}" \
             "    password: ${JENKINS_PASSWORD}"
-    fi
 
-    echo "${JENKINS_PASSWORD}" > "${pass_file}"
+        echo "${JENKINS_PASSWORD}" > "${pass_file}"
+    fi
 }
 
 generate_ssh_key() {
