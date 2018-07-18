@@ -1,3 +1,4 @@
 .idea/
+.docker.env
 env_make
 jenkins_home

@@ -18,6 +18,7 @@ generate_default_password() {
             "    login: ${JENKINS_USER}" \
             "    password: ${JENKINS_PASSWORD}"
 
+        mkdir -p $(dirname "${pass_file}")
         echo "${JENKINS_PASSWORD}" > "${pass_file}"
     fi
 }

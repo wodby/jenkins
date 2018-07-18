@@ -1,4 +1,6 @@
-JENKINS_VER ?= 2.114
+-include .env .docker.env
+
+JENKINS_VER ?= 2.132
 
 REPO = wodby/jenkins
 NAME = jenkins-$(JENKINS_VER)
@@ -28,7 +30,6 @@ push:
 shell:
 	docker run --rm --name $(NAME) $(PARAMS) -ti $(REPO):$(TAG) /bin/bash
 
-# PARAMS="-v /var/run/docker.sock:/var/run/docker.sock"
 run:
 	docker run --rm --name $(NAME) $(PARAMS) $(REPO):$(TAG) $(CMD)
 
