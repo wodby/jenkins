@@ -37,7 +37,6 @@ RUN set -ex; \
         credentials-binding \
         disk-usage \
         docker \
-        envinject \
         jdk-tool \
         git \
         git-parameter \

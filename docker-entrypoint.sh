@@ -7,20 +7,25 @@ if [[ -n "${DEBUG}" ]]; then
 fi
 
 generate_default_password() {
+    if [[ "${JENKINS_PASSWORD}" ]]; then
+        return
+    fi
+
+    # Read password from file if exists.
     pass_file="${JENKINS_HOME}/secrets/password.txt"
 
-    if [[ -z "${JENKINS_PASSWORD}" ]]; then
-        export JENKINS_PASSWORD=$(pwgen -s 32 1)
+    if [[ -f "${pass_file}" ]]; then
+        export JENKINS_PASSWORD=`cat "${pass_file}"`
+        return
     fi
 
-    if [[ ! -f "${pass_file}" ]]; then
-        print_notice "Generated default user password:" \
-            "    login: ${JENKINS_USER}" \
-            "    password: ${JENKINS_PASSWORD}"
-
-        mkdir -p $(dirname "${pass_file}")
-        echo "${JENKINS_PASSWORD}" > "${pass_file}"
-    fi
+    # Generate new password and save it into a file.
+    export JENKINS_PASSWORD=$(pwgen -s 32 1)
+    mkdir -p $(dirname "${pass_file}")
+    echo -n "${JENKINS_PASSWORD}" > "${pass_file}"
+    print_notice "Generated default user password:" \
+        "    login: ${JENKINS_USER}" \
+        "    password: ${JENKINS_PASSWORD}"
 }
 
 generate_ssh_key() {
