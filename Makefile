@@ -1,6 +1,6 @@
 -include .env .docker.env
 
-JENKINS_VER ?= 2.132
+JENKINS_VER ?= 2.121.2
 
 REPO = wodby/jenkins
 NAME = jenkins-$(JENKINS_VER)
