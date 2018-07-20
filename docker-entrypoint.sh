@@ -57,6 +57,8 @@ sudo init_volumes
 
 if [[ $1 == "make" ]]; then
     exec "${@}" -f /usr/local/bin/actions.mk
+elif [[ $1 == "jenkins-cli" ]]; then
+    exec "$@"
 else
     generate_default_password
     generate_ssh_key

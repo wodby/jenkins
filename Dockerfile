@@ -56,7 +56,11 @@ RUN set -ex; \
     # Script to fix volumes permissions via sudo.
     echo "chown jenkins:jenkins ${JENKINS_HOME}" > /usr/local/bin/init_volumes; \
     chmod +x /usr/local/bin/init_volumes; \
-    echo 'jenkins ALL=(root) NOPASSWD:SETENV: /usr/local/bin/init_volumes' > /etc/sudoers.d/jenkins
+    echo 'jenkins ALL=(root) NOPASSWD:SETENV: /usr/local/bin/init_volumes' > /etc/sudoers.d/jenkins; \
+    # Extract jenkins-cli.
+    jar xf /usr/share/jenkins/jenkins.war WEB-INF/jenkins-cli.jar; \
+        mv WEB-INF/jenkins-cli.jar /usr/local/bin/; \
+        rmdir WEB-INF
 
 USER jenkins
 

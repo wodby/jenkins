@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ -n "${DEBUG}" ]]; then
+    set -x
+fi
+
+exec java -jar /usr/local/bin/jenkins-cli.jar "$@"
